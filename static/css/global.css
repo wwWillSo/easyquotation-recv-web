@@ -1,0 +1,698 @@
+﻿﻿@charset "utf-8";
+
+/*------reset-------*/
+html{
+    min-width: 900px;
+    background:#fff;
+}
+html,body{  
+    margin: 0;  
+    padding: 0;  
+    height: 100%;  
+    width: 100%;  
+}  
+
+.center {
+  width: auto;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-center {
+  text-align: center;
+}
+
+article,aside,blockquote,body,button,code,dd,details,
+div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,
+h3,h4,h5,h6,header,hgroup,hr,input,legend,li,menu,nav,
+ol,p,pre,section,td,textarea,th,ul{
+    margin:0;
+    padding:0;
+}
+body,button,input,select,textarea{
+    font:14px "Microsoft YaHei",Arial,Helvetica,sans-serif,tahoma,"宋体";
+    color: #464646;
+}
+input,select,textarea{
+    font-size:100%;
+    vertical-align:middle;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+th{
+    text-align:inherit;
+}
+fieldset,img{
+    border:none;
+}
+iframe{
+    display:block;
+}
+abbr,acronym{
+    border:none;
+    font-variant:normal;
+    }
+del{
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var{
+    font-style:normal;
+    font-weight:500;
+}
+ol,ul{
+    list-style:none;
+}
+caption,th{
+    text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight:500;
+}
+q:after,q:before{
+    content:'';
+}
+sub,sup{
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup{
+    top:-.5em;
+}
+sub{
+    bottom:-.25em;
+}
+a:hover{
+    text-decoration:none;
+    color: #23527c;
+}
+a,ins{
+    text-decoration:none;
+}
+a{
+    color: #333333;
+}
+:focus,a:focus{
+    outline:0;
+}
+body {
+    font-family: "微软雅黑";
+}
+/*Internet Explorer 10 并没有对 屏幕的宽度 和 视口（viewport）的宽度 进行区分，这就导致 Bootstrap 中的媒体查询并不能很好的发挥作用。为了解决这个问题，你可以引入下面列出的这段 CSS 代码暂时修复此问题：*/
+@-ms-viewport {
+    width: device-width;
+}
+/*然而，这样做并不能对 Windows Phone 8 Update 3 (a.k.a. GDR3) 版本之前的设备起作用，由于这样做将导致 Windows Phone 8 设备按照桌面浏览器的方式呈现页面，而不是较窄的“手机”呈现方式，为了解决这个问题，还需要加入以下 CSS 和 JavaScript 代码来化解此问题。*/
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+/*从Safari v8.0 开始，固定宽度的 .container 会导致 Safari 使用非常小的字号来打印页面。参见 #14868 了解跟多信息。下面这段 CSS 代码提供了一个临时解决方案*/
+@media print {
+    .container {
+        width: auto;
+    }
+}
+
+body{
+    font-family: "Microsoft YaHei" arial  !important;
+    /*禁止横向滚动条*/
+    overflow-x: hidden;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding-left: 0;
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+textarea{
+    resize: none;
+}
+
+.display-none{
+    display: none;
+}
+
+a {
+    outline: none;
+    text-decoration:none;
+    display: block;
+} 
+a:visited,a:focus,a:active,a:hover {
+    text-decoration:none;
+    color: inherit;
+}
+a:focus,*:focus{
+    outline: none !important;
+}
+a:active {star:expression(this.onFocus=this.blur());}
+
+.icon{
+    display:inline-block;
+}
+.font-zero{
+    font-size: 0 !important;/*解决图片与内敛元素因空白间距的几像素问题，加在父元素上*/
+}
+.icon-text{
+    vertical-align: middle;
+}
+i{
+    font-style: normal;
+}
+/*浮动 */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after,.clearfix:before{
+    content:"";
+    display:table;
+}
+.clearfix:after{
+    clear:both;
+    overflow:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+/*文字溢出省略*/
+.text-overflow {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*按钮*/
+a.btn{
+    color: #fff;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    border: 0;
+    transition: all 100ms;
+    -o-transition: all 100ms;
+    -ms-transition: all 100ms;
+    -moz-transition: all 100ms;
+    -webkit-transition: all 100ms;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #bbb;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#bbb;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#bbb;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#bbb;
+}
+
+/* layer */
+.layui-layer.layui-layer-dialog .layui-layer-btn0{
+    background: #6232fe;
+    border-color: #6232fe;
+}
+
+
+
+
+
+
+/*头部样式*/
+#header .top-wrap,#header .bottom-wrap,#header .logo img,.main,footer .foot-wrap{
+    margin: 0 auto;
+}
+#header{
+    position: relative;
+    z-index:10;
+}
+#header .head-top{
+    background: #F4F4F4;
+    box-shadow: 0px 1px 0px #999;
+}
+#header  .head-top .top-wrap{
+    width: 1180px;
+    height: 40px;
+    line-height: 40px;
+}
+#header .head-top>p.img{
+    vertical-align: top;
+}
+#header .top-left{
+    margin-left: 40px;
+}
+#header .top-left>p{
+    display: inline-block;
+    /*margin-left: 14px;*/
+    font-size: 14px;
+    color: #464646;
+}
+#header .top-left>p img{
+    width: 90%;
+}
+#header .top-left>p>span.maohao{
+    margin: 0 6px;
+}
+#header .top-left>p>span.phone{
+    color: #ff6600;
+    font-size: 16px;
+}
+#header .top-right li{
+    margin-right: 20px; 
+}
+#header .top-right li a{
+    font-size: 14px;
+    color: #464646;
+    cursor: pointer;
+}
+#header .top-right .no-login a:hover{
+    color: #6232fe;
+}
+#header .top-right li img{
+    width: 32px;
+    border-radius: 50%;
+}
+#header .top-right .logined li:first-child{
+    margin-right: 5px;
+}
+#header .top-right .logined li:last-child a:hover{
+    color: #6232fe;
+    text-decoration: underline;
+}
+#header .head-bottom{
+    /*height: 80px;*/
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 1px 2px #999;
+}
+#header .head-bottom-fixed{
+    position: fixed;
+    height: 80px;
+    top: 0;
+    z-index: 10;
+}
+
+#header .bottom-wrap{
+    width: 1180px;
+    /*display: inline-block;*/
+}
+#header .head-bottom .logo-wrap{
+    padding: 20px 36px;
+}
+#header .head-bottom-fixed .logo-wrap{
+    padding: 0;
+}
+#header .head-bottom .logo{
+    width: 300px;  
+    /*height: 80px;*/
+    /*background: #ccc;*/
+}
+#header .logo img{
+    /*height: 74px;*/
+    /*display: block;*/
+}
+#header .head-bottom .nav{
+    padding: 39px 0 20px;
+}
+#header .head-bottom-fixed .nav{
+    padding: 17px 0;
+}
+#header .nav>ul>li{
+    width: 110px;
+    float: left;
+    margin-right: 1px;
+    position: relative;
+}
+#header .nav>ul>li>a{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #464646;
+    border: 1px solid #fff;
+    background: #fff;
+    transition: all 200ms;
+    -o-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -webkit-transition: all 200ms;
+}
+#header .nav>ul>li>a span{
+    margin: 0;
+    margin-left:0;
+}
+#header .nav>ul>li.active>a,#header .nav>ul>li:hover>a{
+    border: 1px solid #6232fe;
+    background: #fff;
+}
+#header .nav>ul>li.active>a{
+    color: #6232fe;
+}
+
+/*二级菜单*/
+#header .nav>ul>li ul.dropdown-menu{
+    height: 140px;
+    min-width: 0;
+    width: 110px;
+    border-radius: 0;
+    margin-top: -1px;
+    padding: 0;
+    border: 1px solid #6232fe;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+}
+#header .nav>ul>li li a{
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    color: #464646;
+    text-align: center;
+}
+#header .nav>ul>li li a:hover{
+    background: #f4f4f4;
+}
+/*主体内容*/
+.main{
+    padding-bottom: 90px;
+    background: #f4f4f4;
+}
+.main .container{
+    width: 1180px;
+    margin: 0 auto;
+    padding:0;
+}
+.main .container .row{
+    margin-left:0;
+    margin-right:0;
+}
+
+/*表单验证*/
+.form-group input + label.error{
+    width: 300px;
+    height: 46px;
+    line-height: 46px;
+    text-align: left;
+    display: inline;
+    font-weight: normal;
+    margin-left: 20px;
+    font-size: 16px;
+    position: absolute;
+    
+}
+.login-register .input-group label.error{
+    left: 300px;
+    top: 0;
+}
+label.error{
+    color: #ff0000;
+}
+
+/*尾部*/
+#footer{
+    background: #202e44;
+    text-align: center;
+}
+#footer .foot-wrap{
+    width: 1024px;
+    display: inline-block;
+    color: #b1d3fd;
+}
+#footer .foot-wrap p{
+    font-size: 14px;
+}
+#footer .foot-top{
+    padding: 40px 0 0 0;
+}
+#footer .foot-nav{
+    width: 400px;
+}
+#footer .foot-nav ul{
+    display: -webkit-box;     
+    display: -moz-box;        
+    display: -ms-flexbox;      
+    display: -webkit-flex;    
+    display: flex;
+}
+#footer .foot-nav li{
+    float: left;
+    -webkit-box-flex: 1;     
+    -moz-box-flex: 1;        
+    width: 33.3%;             
+    -webkit-flex: 1;         
+    -ms-flex: 1;             
+    flex: 1; 
+}
+#footer .foot-nav li h3{
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+#footer .foot-nav li p{
+    margin-bottom: 16px;
+}
+#footer .foot-nav p a{
+    font-size: 14px;
+    color: #b1d3fd;
+}
+#footer .foot-nav p a:hover{
+    text-decoration: underline;
+}
+#footer .foot-saosao{
+    width: 100px;;
+    height: 100px;
+    background: url(../images/winteams.png) 0 0 no-repeat;
+    padding: 0 50px;
+    margin-left: 130px;
+    background-size: contain;
+}
+#footer .foot-saosao img{
+    width: 100px;
+}
+#footer .foot-tel{
+    /*padding-left: 50px;*/
+    text-align: left;
+}
+#footer .foot-tel p{
+    margin-bottom: 10px;
+}
+#footer .foot-tel span{
+    font-size: 30px;
+    display: block;
+    margin-top: 20px;
+}
+#footer .foot-tel time{
+    margin-left: 4px;
+}
+#footer .foot-bottom{
+    padding: 16px 0;
+}
+#footer .foot-bottom ul{
+    display: inline-block;
+}
+#footer .foot-bottom li{
+    float: left;
+    margin: 16px 0 16px 16px;
+}
+#footer .foot-bottom li a{
+    width: 76px;
+    height: 28px;
+    background: 0 0 no-repeat;
+}
+
+
+/*弹出框*/
+body{
+    position: relative;
+}
+.shade{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.2);
+    z-index: 20;
+    display: none;
+}
+.shade .dialog{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    background: #fff;
+    border: 1px solid #bbb;
+}
+.shade .dialog-header{
+    height: 68px;
+    background: #eee;
+    border-bottom: 1px solid #bbb;
+}
+.shade .dialog-header .header-close{
+    width: 48px;
+    height: 48px;
+    background: url(../images/close.png) 0 0 no-repeat;
+    position: absolute;
+    top: -22px;
+    right: -22px;
+    cursor: pointer;
+
+}
+.shade .dialog-header .header-title{
+    line-height: 68px;
+    font-size: 22px;
+    color: #666;
+    padding-left: 20px;
+}
+
+
+/*弹出框*/
+.modal{
+    padding-right: 17px;
+}
+.modal-dialog{
+    /*margin-top:220px;*/
+}
+.modal-dialog .modal-content{
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border-color: #bbb;
+}
+/*头部*/
+.modal-content .modal-header{
+    height: 50px;
+    
+    padding: 0;
+    padding-left: 16px;
+    background: #eee;
+    border-bottom: 1px solid #bbb;
+}
+/*标题*/
+.modal-content .modal-title{
+    height: 100%;
+    line-height: 50px;
+    font-size: 22px;
+    color: #666;
+}
+/*关闭按钮*/
+.modal-header .close{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../images/close.png) center center no-repeat;
+    background-size: 90%;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    opacity: 1;
+}
+/*主体*/
+.modal-body .form-group{
+    font-size: 22px;
+}
+.modal-body .form-group label{
+    font-weight: normal;
+    color: #666;
+    margin-right: 10px;
+}
+.modal-body .form-group input{
+    width: 200px;
+    height: 46px;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+}
+.modal-body .form-group p{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 40px;
+}
+.modal-body .body-text .bold{
+    font-weight: bold;
+}
+/*尾部*/
+.modal-footer{
+    padding-top:0;
+    text-align: left;
+    border-top: none;
+}
+.modal-footer button,.modal-footer button:hover,.modal-footer button:focus{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding:0;
+    color: #fff;
+    background: #6232fe;
+    border-radius: 0;
+    border: 0;
+}
+
+/*错误页面*/
+.jumbotron{
+    width: 600px;
+    margin: 30px auto;
+    background: #ddd;
+    text-align: center;
+}
+.jumbotron .error-msg{
+    margin-bottom: 20px;
+}
+.jumbotron .img-box{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: url(../../static/images/no.png) 0 0 no-repeat;
+    background-size: cover;
+}
+.jumbotron .jumbotron h1{
+    height: 100%;
+    margin: 0 0 0 20px;
+    font-size: 40px;
+    line-height: 150px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.jumbotron p:last-child{
+    margin-top: 40px;
+}
+.jumbotron a,.jumbotron a:visited,.jumbotron a:focus,.jumbotron a:link,.jumbotron a:hover{
+    background: #6232fe;
+    border-color: #6232fe;
+}

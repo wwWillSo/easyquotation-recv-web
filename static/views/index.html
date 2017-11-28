@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--将下面的<meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit" />
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>k线图</title>
+    <meta name="keywords" content="k线图"/>
+    <meta name="description" content=""/>
+    <!--favicon-->
+    <link rel="icon" href="../images/favicon-WillSo.ico" type="image/x-icon" />
+    <!-- <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon" /> -->
+    <!--如果想收藏书签也有Favicon.ico图标，在上面那段代码下面加入-->
+    <!-- <link rel="Bookmark" href="/images/favicon.ico" type="image/x-icon" /> -->
+
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.5-dist/css/bootstrap-theme.css"/>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 1000px;height:700px;margin-left:auto;margin-right:auto;"></div>
+   	
+    <script src="../plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../plugins/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/chart/echarts.js"></script>
+    <script src="../js/chart/chart.js"></script>
+</body>
+</html>
